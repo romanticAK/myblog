@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>测试日记-kangjian</title>
+    <link rel='stylesheet' id='bootstrap-css' href='{% static "css/bootstrap.min.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='fontawesome-css' href='{% static "css/font-awesome.min.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='stylesheet-css' href='{% static "css/style.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='raxus-css' href='{% static "css/raxus.css" %}' type='text/css' media='all'/>
+    <link rel='stylesheet' id='open-social-style-css' href='{% static "css/os.css" %}' type='text/css' media='all'/>
+    <meta name='robots' content='index,follow'/>
+</head>
+<body class="home blog site-layout-2">
+<!-- 头部 -->
+<header class="fix-wrap" id="fix-wrap">
+    <div class="fix-main clearfix pr" id="fix-main" _hover-ignore="1"><a href="/" class="index-logo">
+        <img src="{% static "picture/logo.png" %}" alt="首页logo"></a>
+        <nav class="nav fl">
+            <ul id="fix-list" class="fix-list clearfix">
+
+                <li id="menu-item-24086" class="menu-item"><a href="/">首页</a></li>
+{#                文章分类显示使用下面代码#}
+                {% for category in allcategory %}
+                <li id="menu-item-117720" class="menu-item">
+                 <a href="{% url 'index' %}list-{{ category.id }}.html">{{ category.name }}</a>
+                 </li>
+                {% endfor %}
+
+                <li id="menu-item-24086" class="menu-item"><a href="/about/">关于博主</a></li>
+            </ul>
+        </nav>
+        <form method="get" class="index-search  hidden-xs" action="{% url 'index' %}s/">
+            <input class="text" name="search" type="text" placeholder="输入关键字" value="">
+            <button class="submit" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+<!-- 底部 -->
+<footer class="footer">
+    <div class="copyright"> © 2020-2021 · All Rights Reserved
+        · <a href="http://www.beian.gov.cn/portal/recordQuery?token=b4a0a3b0-4edf-4710-ae3b-047319a9b661" target="_blank">鄂ICP备20001940号  网安备案号44060602001568</a> 版权所有 © 测试日记-kangjian
+    </div>
+</footer>
+<script src="{% static "js/bundle.js" %}"></script>
+<script type="text/javascript" src="{% static "js/view-history.js" %}"></script>
+<script type='text/javascript' src="{% static "js/push.js" %}"></script>
+<script type='text/javascript' src='{% static "js/jquery.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bootstrap.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/raxus-slider.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/loader.js" %}'></script>
+<script type='text/javascript' src='{% static "js/bj-lazy-load.min.js" %}'></script>
+<script type='text/javascript' src='{% static "js/os.js" %}'></script>
+
+</body>
+</html>
