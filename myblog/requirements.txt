@@ -2,7 +2,7 @@ simplejson
 article==0.1.1
 asgiref==3.2.5
 mysqlclient==1.4.6
-Pillow==7.0.0
+Pillow==9.0.0
 Django==3.0.4
 PyMySQL==0.9.3
 pytz==2019.3
